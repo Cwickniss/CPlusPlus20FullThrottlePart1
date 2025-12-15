@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  openai-cpp:
+    image: openai-cpp-gcc15
+    container_name: openai-cpp-gcc15-dev
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    working_dir: /usr/src
+    volumes:
+      - ./:/usr/src
+    tty: true
+    stdin_open: true

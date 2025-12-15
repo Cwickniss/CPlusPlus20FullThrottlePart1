@@ -19,9 +19,9 @@ https://visualstudio.microsoft.com/downloads/
 ## g++ or clang++
 To quickly get up and running with g++ or clang++, I recommend Docker:
 - Install Docker Desktop: https://www.docker.com/products/docker-desktop/ 
-- docker pull gcc:latest
-  - (you can also do a specific version like gcc:15)
-- docker pull teeks99/clang-ubuntu:21
+- `docker pull gcc:latest`
+  - (you can also do a specific version like `gcc:15`)
+- `docker pull teeks99/clang-ubuntu:21`
 
 My Before You Begin and Lesson 1 videos in [C++ Fundamentals video course on O'Reilly Online Learning](https://learning.oreilly.com/course/c20-fundamentals-with/9780136875185/) discuss installation and compiling details. 
 
@@ -36,16 +36,15 @@ My Before You Begin and Lesson 1 videos in [C++ Fundamentals video course on O'R
   - Add `-I` flag followed by the include folder location
 
 ## Running the teeks99/clang-ubuntu Docker Container from the Command Line
-- Change to the folder containing the course examples then…
-  - docker run --rm -it -v .:/usr/src teeks99/clang-ubuntu:21
+- Change to the folder containing the course examples then
+  - `docker run --rm -it -v .:/usr/src teeks99/clang-ubuntu:21`
 - Compiling/running using the g++ standard library (clang++ defaults to this)
-  - clang++ -std=c++20 filesToCompile -o executableName
-  - ./executableName
+  - `clang++ -std=c++20 filesToCompile -o executableName`
+  - `./executableName`
 - Compiling/running using the clang++ standard library 
-  - clang++ -std=c++20 -stdlib=libc++ filesToCompile -o executableName
-  - ./executableName
-- For clang++ 16, also compile with:
-  -fexperimental-library
+  - `clang++ -std=c++20 -stdlib=libc++ filesToCompile -o executableName`
+  - `./executableName`
+- For clang++ 16, also compile with: `-fexperimental-library`
 - For examples requiring libraries in the `libraries` folder
-  - Add -I flag followed by the include folder location
+  - Add `-I` flag followed by the include folder location
 
